@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aesthetics by Abs - Luxury Mobile Beauty Clinic, Kent</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root {
+            --color-bg: #FAF9F6; /* Soft White/Cream */
+            --color-primary: #F4D4D4; /* Soft Blush Pink */
+            --color-accent: #D6BCAE; /* Champagne Nude/Gold */
+            --color-text: #3d3d3d; /* Elegant Dark Grey */
+            --color-heading: #2C2C2C;
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            color: var(--color-heading);
+            font-weight: 600;
+        }
+        
+        .text-gray-600, .text-gray-700 {
+            color: var(--color-text);
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--color-accent);
+            color: white;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border-radius: 9999px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease-in-out;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            opacity: 0.8;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: transparent;
+            border: 1px solid var(--color-accent);
+            color: var(--color-accent);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border-radius: 9999px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease-in-out;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .btn-secondary:hover {
+            background-color: var(--color-accent);
+            color: white;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-2px);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .footer-link {
+            color: #D1D5DB; /* text-gray-300 */
+            transition: color 0.3s;
+        }
+        .footer-link:hover {
+            color: var(--color-primary);
+        }
+
+        .hero-gradient {
+            background-color: var(--color-primary);
+            background-image: linear-gradient(135deg, #F4D4D4 0%, #FAF9F6 70%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes float-hearts {
+            0% { transform: translateY(0); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+        .hero-animation-container {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;
+        }
+        .hero-heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            filter: blur(1px);
+            animation-name: float-hearts;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            z-index: 1;
+        }
+        .hero-heart.heart-1 { left: 10%; font-size: 3rem; animation-duration: 25s; animation-delay: 0s; color: var(--color-primary); filter: blur(1px); }
+        .hero-heart.heart-2 { left: 30%; font-size: 1.5rem; animation-duration: 30s; animation-delay: -5s; }
+        .hero-heart.heart-3 { left: 50%; font-size: 4rem; animation-duration: 22s; animation-delay: -3s; color: var(--color-primary); opacity: 0.7; filter: blur(1.5px); }
+        .hero-heart.heart-4 { left: 70%; font-size: 2.5rem; animation-duration: 28s; animation-delay: -10s; }
+        .hero-heart.heart-5 { left: 90%; font-size: 2rem; animation-duration: 26s; animation-delay: -7s; color: var(--color-primary); }
+        .hero-heart.heart-6 { left: 20%; font-size: 1.5rem; animation-duration: 32s; animation-delay: -12s; }
+        .hero-heart.heart-7 { left: 40%; font-size: 2.5rem; animation-duration: 27s; animation-delay: -15s; color: var(--color-primary); }
+        .hero-heart.heart-8 { left: 60%; font-size: 2rem; animation-duration: 35s; animation-delay: -8s; }
+        .hero-heart.heart-9 { left: 80%; font-size: 3.5rem; animation-duration: 23s; animation-delay: -18s; color: var(--color-primary); opacity: 0.6; filter: blur(1.5px); }
+        .hero-heart.heart-10 { left: 5%; font-size: 1.5rem; animation-duration: 29s; animation-delay: -20s; }
+
+        .reveal-container {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s cubic-bezier(0.5, 0, 0, 1), transform 1s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            background-color: #25D366;
+            color: #FFFFFF;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            z-index: 40;
+            transition: all 0.3s ease-in-out;
+        }
+        .whatsapp-float:hover {
+            transform: translateY(-4px) scale(1.1);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .hover-box-effect {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateZ(0);
+        }
+        .hover-box-effect:hover {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transform: translateY(-0.5rem);
+        }
+
+        .qualification-card {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+            border: 1px solid #f3f4f6;
+            transition: all 0.3s ease-in-out;
+        }
+        .qualification-card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-4px);
+            border-color: var(--color-primary);
+        }
+        .qualification-icon {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            margin-right: 1rem;
+            border-radius: 9999px;
+            background-color: var(--color-primary);
+            color: var(--color-accent);
+            font-size: 1.25rem;
+        }
+        .qualification-card h3 {
+            font-size: 1.125rem;
+            font-weight: 500;
+            font-family: var(--font-body);
+            color: var(--color-text);
+        }
+
+        .service-nav-link {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            font-size: 1.125rem;
+            font-family: var(--font-heading);
+            font-weight: 500;
+            color: var(--color-text);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+        .service-nav-link:hover {
+            background-color: #ffffff;
+            color: var(--color-accent);
+        }
+        .service-nav-link.active {
+            background-color: #ffffff;
+            color: var(--color-accent);
+            font-weight: 600;
+            border-color: #f0e9e9;
+            box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.05);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .service-content-block-active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="antialiased">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
